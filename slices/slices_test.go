@@ -4,6 +4,7 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/tdibacco/fp/fn"
 	"github.com/tdibacco/fp/slices"
 )
 
@@ -271,35 +272,35 @@ func TestForAll(t *testing.T) {
 		name: "nil",
 		args: args[bool]{
 			as: nil,
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: true,
 	}, {
 		name: "empty",
 		args: args[bool]{
 			as: []bool{},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: true,
 	}, {
 		name: "contains a false",
 		args: args[bool]{
 			as: []bool{true, false, true},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: false,
 	}, {
 		name: "all true",
 		args: args[bool]{
 			as: []bool{true, true, true},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: true,
 	}, {
 		name: "all false",
 		args: args[bool]{
 			as: []bool{false, false, false},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: false,
 	}}
@@ -326,35 +327,35 @@ func TestForAny(t *testing.T) {
 		name: "nil",
 		args: args[bool]{
 			as: nil,
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: false,
 	}, {
 		name: "empty",
 		args: args[bool]{
 			as: []bool{},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: false,
 	}, {
 		name: "contains a false",
 		args: args[bool]{
 			as: []bool{true, false, true},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: true,
 	}, {
 		name: "all true",
 		args: args[bool]{
 			as: []bool{true, true, true},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: true,
 	}, {
 		name: "all false",
 		args: args[bool]{
 			as: []bool{false, false, false},
-			f:  func(a bool) bool { return a },
+			f:  fn.Identity[bool],
 		},
 		want: false,
 	}}

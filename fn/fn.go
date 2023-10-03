@@ -1,8 +1,14 @@
 package fn
 
+// Identity a function that returns its input value.
+// Useful for function that take a slice and a function, but all you
+func Identity[T any](x T) T {
+	return x
+}
+
 // Not negates a function boolean results.
-func Not[A any](f func(A) bool) func(A) bool {
-	return func(a A) bool { return !f(a) }
+func Not[T any](f func(T) bool) func(T) bool {
+	return func(v T) bool { return !f(v) }
 }
 
 // Curry converts a function 'op' of two arguments into a function of one argument that partially applies 'op'.
