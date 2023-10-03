@@ -19,7 +19,7 @@ func FlatMap[A, B any](as []A, f func(A) []B) []B {
 		return nil
 	}
 
-	bs := make([]B, 0, len(as))
+	bs := make([]B, 0)
 	for _, a := range as {
 		bs = append(bs, f(a)...)
 	}
