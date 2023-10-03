@@ -1,4 +1,4 @@
 # fp
 Functional Programing constructs for Go.
-* fp/fn - fp for functions.
-* fp/slices - fp for slices.
+* github.com/tdibacco/fp/fn - functions for building higher level functions.
+* github.com/tdibacco/fp/slices - functions for slices.

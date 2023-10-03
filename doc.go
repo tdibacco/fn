@@ -4,5 +4,5 @@
 //
 // The fn package provides functions for building higher level functions.
 //
-// The slices package provides functions for slice.
+// The slices package provides functions for slices.
 package fp
