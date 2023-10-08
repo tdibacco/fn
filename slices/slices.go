@@ -58,7 +58,7 @@ func FoldRight[A, B any](as []A, z B, op func(a A, b B) B) B {
 	return op(head, FoldRight(tail, z, op))
 }
 
-// Distinct returns NEW slice with a unique set of elements.
+// Distinct returns a new slice with a unique set of elements.
 // Order is maintained with the first occurrence of an element appearing first.
 func Distinct[A comparable](as []A) []A {
 	if as == nil {
@@ -78,7 +78,7 @@ func Distinct[A comparable](as []A) []A {
 	})
 }
 
-// Reversed returns NEW slice with elements in reversed order.
+// Reversed returns a new slice with elements in reversed order.
 func Reversed[A any](as []A) []A {
 	if as == nil {
 		return nil
@@ -93,7 +93,7 @@ func Reversed[A any](as []A) []A {
 	return res
 }
 
-// ForAll returns true if all elements in a slice evaluate to true by the predicate, otherwise it returns False.
+// ForAll returns true if all elements in a slice evaluate to true by the predicate, otherwise it returns false.
 // If the slice is empty or nil, ForAll() will return true.
 func ForAll[A any](as []A, f func(A) bool) bool {
 	for _, v := range as {
@@ -104,7 +104,7 @@ func ForAll[A any](as []A, f func(A) bool) bool {
 	return true
 }
 
-// ForAny returns true if any element in a slice evaluates to true by the predicate, otherwise it returns False.
+// ForAny returns true if any element in a slice evaluates to true by the predicate, otherwise it returns false.
 // If the slice is empty or nil, ForAny() will return false.
 func ForAny[A any](as []A, f func(A) bool) bool {
 	for _, v := range as {
@@ -115,6 +115,8 @@ func ForAny[A any](as []A, f func(A) bool) bool {
 	return false
 }
 
+// Zip to slices together returning a slice of structs containing both A and B.
+// The length of the slice returned is the min of either A or B.
 func Zip[A, B any](as []A, bs []B) []struct {
 	A A
 	B B

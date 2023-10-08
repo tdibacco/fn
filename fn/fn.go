@@ -1,7 +1,6 @@
 package fn
 
 // Identity a function that returns its input value.
-// Useful for function that take a slice and a function, but all you
 func Identity[T any](x T) T {
 	return x
 }
